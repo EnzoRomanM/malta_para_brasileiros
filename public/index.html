@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Malta Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="cabecalho">
+        <h3 class="logo">Malta <span class="logo_verde">Experience</span></h3>
+        <div class="menu">
+            <a href="#como">Passo a passo</a>
+            <a href="#info">Informações</a>
+            <a href="#calculadora">Calculadora</a>
+            <a href="#cidades">Cidades</a>
+        </div>
+        <div class="botoes_topo">
+            <a class="link_botao" href="login.html">Acessar conta</a>
+            <a class="link_botao_verde" href="cadastro.html">Criar conta</a>
+        </div>
+    </div>
+
+
+    <div class="topo">
+        <div class="topo_texto">
+            <h1>Seu guia para morar em Malta</h1>
+            <p>Está pensando em morar em Malta? Descubra tudo o que você precisa saber antes de embarcar.</p>
+            <a class="link_botao_verde" href="#formulario">Responder o formulário</a>
+        </div>
+    </div>
+
+    <div class="secao">
+        <div class="linha_sol">
+            <h2 class="texto_esquerda">Sol, praia e calor!<br>O destino perfeito.</h2>
+            <p class="texto_sol">Malta é um país que fica localizado no mar Mediterrâneo, logo abaixo da Itália. Ele é
+                formado por 3 ilhas: Ilha de Malta, Comino e Gozo.</p>
+        </div>
+        <img class="mapa" src="./img/mapa_malta.png" alt="Mapa das ilhas de Malta">
+        <div class="legenda">
+            <div>
+                <div class="barra_gozo"></div>Gozo
+            </div>
+            <div>
+                <div class="barra_comino"></div>Comino
+            </div>
+            <div>
+                <div class="barra_malta"></div>Ilha de Malta
+            </div>
+        </div>
+    </div>
+
+    <div class="secao" id="como">
+        <h2>Do Brasil à rotina em Malta</h2>
+        <p>Escolha uma fase para ver o que fazer em cada momento.</p>
+
+        <button id="etapa_planejar" class="botao_aba_ativo" onclick="mostrarPlanejar()">1 · Planejar</button>
+        <button id="etapa_chegar" class="botao_aba" onclick="mostrarChegar()">2 · Chegar</button>
+        <button id="etapa_se_adaptar" class="botao_aba" onclick="mostrarSeAdaptar()">3 · Se adaptar</button>
+
+        <div id="conteudo_planejar" class="cartao">
+            <h3>01 · Planejar</h3>
+            <span class="etiqueta">Antes de viajar</span>
+            <p>Quanto antes você organiza a base, menos imprevisto na chegada.</p>
+            <div class="grade_itens">
+                <div class="item">Definir o motivo da mudança (estudo, trabalho ou ambos) e conferir em fontes oficiais
+                    se você precisa de permissão antes de viajar.</div>
+                <div class="item">Escolher a escola de inglês e a data de início.</div>
+                <div class="item">Montar o orçamento: moradia, transporte, alimentação e reserva de emergência.</div>
+                <div class="item">Reservar hospedagem temporária para as primeiras semanas.</div>
+            </div>
+        </div>
+
+        <div id="conteudo_chegar" class="cartao escondido">
+            <h3>02 · Chegar</h3>
+            <span class="etiqueta">Primeiros dias</span>
+            <p>Os primeiros dias são para resolver o básico e conhecer a região onde você vai morar.</p>
+            <div class="grade_itens">
+                <div class="item">Ir para a hospedagem temporária e descansar da viagem.</div>
+                <div class="item">Comprar um chip local ou um plano de internet.</div>
+                <div class="item">Conhecer o caminho entre a hospedagem e a escola.</div>
+                <div class="item">Começar a procurar moradia fixa com calma, sem pressa.</div>
+            </div>
+        </div>
+
+        <div id="conteudo_se_adaptar" class="cartao escondido">
+            <h3>03 · Se adaptar</h3>
+            <span class="etiqueta">Rotina em Malta</span>
+            <p>Com o tempo, a cidade vira casa. Organize a rotina e crie sua rede de contatos.</p>
+            <div class="grade_itens">
+                <div class="item">Frequentar as aulas e praticar o inglês no dia a dia.</div>
+                <div class="item">Aprender a usar o transporte público da ilha.</div>
+                <div class="item">Conhecer outros brasileiros e intercambistas de várias nacionalidades.</div>
+                <div class="item">Acompanhar o orçamento para não gastar além do planejado.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="secao fundo_verde" id="info">
+        <h2 class="titulo_branco">Informações <span class="amarelo">Importantes</span></h2>
+        <div class="caixa_info">
+            <div><img class="icone" src="./img/icone_moeda.svg" alt="Moeda"><br><b>Moeda:</b> Euro €</div>
+            <div><img class="icone" src="./img/icone_tomada.svg" alt="Tomada"><br><b>Tomada:</b> Tipo G</div>
+            <div><img class="icone" src="./img/icone_fuso.svg" alt="Fuso Horário"><br><b>Fuso Horário:</b> GMT+1</div>
+            <div><img class="icone" src="./img/icone_idioma.svg" alt="Idioma"><br><b>Idioma:</b> inglês e maltês</div>
+        </div>
+
+        <h2 class="titulo_branco" id="experiencias">Experiências reais</h2>
+        <div class="linha_citacoes">
+            <div class="citacao">
+                <div class="aspas">“</div>
+                Malta me surpreendeu. E o país me ofereceu muito mais que um clima gostoso e praias paradisíacas. Tem
+                muita história, diversos museus, sítios arqueológicos e muitos pontos turísticos além das praias. Malta
+                tem uma cultura muito rica, com forte influência italiana e árabe, que gerou uma mistura bastante
+                peculiar.
+                <b class="autor">Luis Gustavo</b>
+            </div>
+            <div class="citacao">
+                <div class="aspas">“</div>
+                Olha, se tem uma coisa que me faz não querer sair de Malta tão cedo é a segurança. Eu vim do Brasil e a
+                diferença é brutal, parece que você volta a respirar em paz.
+                <b class="autor">Carol Costa</b>
+            </div>
+        </div>
+    </div>
+
+    <!-- CALCULADORA -->
+    <div class="secao" id="calculadora">
+        <h2>Quanto você precisa para viajar?</h2>
+        <p>Informe quantos dias pretende ficar e em quantos meses vai viajar.</p>
+
+        <div class="cartao_estreito">
+            <label>Quantos dias vai ficar?</label>
+            <input id="input_dias" type="number" value="">
+
+            <label>Em quantos meses vai viajar?</label>
+            <input id="input_meses_viagem" type="number" value="">
+
+            <label>Em qual moeda quer ver o resultado?</label>
+            <select id="select_moeda">
+                <option value="BRL">Real (R$)</option>
+                <option value="EUR">Euro (€)</option>
+            </select>
+
+            <label>Cotação do euro hoje (em R$)</label>
+            <input id="input_cotacao" type="number" value="6.00">
+
+            <button class="botao_laranja" onclick="calcularViagem()">Calcular</button>
+            <p>Usa valores de referência por dia para moradia, alimentação e transporte. São estimativas, não preços
+                fixos.</p>
+        </div>
+
+        <div id="resultado" class="cartao_estreito fundo_bege escondido">
+            <h3>Sua estimativa</h3>
+            <div class="linha"><span>Moradia</span> <b id="span_moradia"></b></div>
+            <div class="linha"><span>Alimentação</span> <b id="span_alimentacao"></b></div>
+            <div class="linha"><span>Transporte</span> <b id="span_transporte"></b></div>
+            <div class="linha"><span>Passagem</span> <b id="span_passagem"></b></div>
+            <div class="linha"><span>Reserva (10%)</span> <b id="span_reserva"></b></div>
+            <div class="linha"><span>Total estimado</span> <b id="span_total_estimado"></b></div>
+            <p id="p_equivalencia"></p>
+            <div class="linha"><span>Média por dia</span> <b id="span_media_dia"></b></div>
+            <div class="linha_guardar"><span>Guardar por mês</span> <span id="span_guardar_mes"></span></div>
+        </div>
+    </div>
+
+
+    <div class="secao fundo_claro" id="cidades">
+        <h2>Conheça algumas das cidades mais populares</h2>
+        <p>Escolha uma cidade para ver como ela é.</p>
+
+        <button id="cidade_valletta" class="botao_aba_ativo" onclick="mostrarValletta()">Valletta</button>
+        <button id="cidade_sliema" class="botao_aba" onclick="mostrarSliema()">Sliema</button>
+        <button id="cidade_stjulians" class="botao_aba" onclick="mostrarStJulians()">St. Julian's</button>
+        <button id="cidade_mdina" class="botao_aba" onclick="mostrarMdina()">Mdina</button>
+
+        <div id="card_valletta" class="cartao cartao_cidade">
+            <img class="foto_cidade" src="./img/valletta.jpg" alt="Valletta">
+            <div>
+                <h3>Valletta</h3>
+                <span class="etiqueta">História e cultura</span>
+                <p>A capital de Malta, com centro histórico.</p>
+                <ul>
+                    <li>Arquitetura barroca patrimônio da UNESCO</li>
+                    <li>Fácil acesso de balsa para Sliema</li>
+                    <li>Museus, cafés históricos e vista para o Grand Harbour</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="card_sliema" class="cartao cartao_cidade escondido">
+            <img class="foto_cidade" src="./img/sliema.jpg" alt="Sliema">
+            <div>
+                <h3>Sliema</h3>
+                <span class="etiqueta">Comércio e orla</span>
+                <p>Região moderna à beira-mar com muitas lojas e cafés.</p>
+                <ul>
+                    <li>Calçadão à beira-mar ideal para caminhadas</li>
+                    <li>Muitas lojas, shoppings e restaurantes</li>
+                    <li>Ótima localização para estudantes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="card_stjulians" class="cartao cartao_cidade escondido">
+            <img class="foto_cidade" src="./img/st_julians.jpg" alt="St. Julian's">
+            <div>
+                <h3>St. Julian's</h3>
+                <span class="etiqueta">Vida noturna e escolas</span>
+                <p>O ponto mais agitado da ilha, cheio de estudantes.</p>
+                <ul>
+                    <li>Concentração das principais escolas de inglês</li>
+                    <li>Região de Paceville com bares e vida noturna</li>
+                    <li>Baía de Spinola com barcos tradicionais</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="card_mdina" class="cartao cartao_cidade escondido">
+            <img class="foto_cidade" src="./img/mdina.jpg" alt="Mdina">
+            <div>
+                <h3>Mdina</h3>
+                <span class="etiqueta">Medieval e tranquila</span>
+                <p>A cidade murada que já foi a antiga capital de Malta.</p>
+                <ul>
+                    <li>Antiga capital medieval murada</li>
+                    <li>Ruas tranquilas sem circulação de carros</li>
+                    <li>Vista panorâmica de toda a ilha de Malta</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="secao fundo_bege" id="formulario">
+        <h2>Compartilhe seus planos para Malta</h2>
+        <p>Responda 4 perguntas rápidas.</p>
+
+        <div class="cartao_estreito">
+            <label>1. Qual o seu principal motivo para ir para Malta?</label>
+            <input class="radio" type="radio" name="motivo" id="radio_estudar" value="Estudar"> Estudar <br>
+            <input class="radio" type="radio" name="motivo" id="radio_trabalhar" value="Trabalhar"> Trabalhar <br>
+            <input class="radio" type="radio" name="motivo" id="radio_ambos" value="Estudar e trabalhar"> Estudar e
+            trabalhar <br>
+            <input class="radio" type="radio" name="motivo" id="radio_conhecer" value="Conhecer e avaliar"> Conhecer e
+            avaliar
+
+            <label>2. Em qual cidade você pretende morar?</label>
+            <select id="select_cidade_morar">
+                <option value="1">Valletta</option>
+                <option value="2">Sliema</option>
+                <option value="3">St. Julian's</option>
+                <option value="4">Mdina</option>
+                <option value="5">Ainda não decidi</option>
+            </select>
+
+            <label>3. Quando pretende viajar?</label>
+            <select id="select_quando_viajar">
+                <option>Em até 3 meses</option>
+                <option>Entre 3 e 6 meses</option>
+                <option>Entre 6 e 12 meses</option>
+                <option>Em mais de 1 ano</option>
+            </select>
+
+            <label>4. O que mais te preocupa na mudança?</label>
+            <select id="select_preocupacao">
+                <option>Visto e documentos</option>
+                <option>Moradia</option>
+                <option>Custo de vida</option>
+                <option>Trabalho</option>
+                <option>Idioma</option>
+            </select>
+
+            <button class="botao_verde" onclick="enviarPlanos()">Enviar respostas</button>
+            <div id="div_exibir"></div>
+        </div>
+    </div>
+
+    <div class="secao fundo_laranja">
+        <h2 class="titulo_escuro">Crie sua conta para ver quantos brasileiros já responderam</h2>
+        <p class="texto_escuro">Veja o que outras pessoas que querem morar em Malta estão escolhendo e planejando.</p>
+
+        <div class="linha_cartoes">
+            <div class="cartao_pequeno"><b>Cidades</b><br>Quais cidades mais escolhem</div>
+            <div class="cartao_pequeno"><b>Motivos</b><br>Estudo, trabalho ou os dois</div>
+            <div class="cartao_pequeno"><b>Preocupações</b><br>O que mais pesa na decisão</div>
+        </div>
+
+        <a class="link_botao_verde" href="cadastro.html">Criar conta</a>
+        <a class="link_botao" href="login.html">Já tenho conta</a>
+    </div>
+
+    <script>
+
+        function esconderEtapas() {
+            let vetorConteudos = [conteudo_planejar, conteudo_chegar, conteudo_se_adaptar];
+            let vetorBotoes = [etapa_planejar, etapa_chegar, etapa_se_adaptar];
+
+            for (let i = 0; i < vetorConteudos.length; i++) {
+                vetorConteudos[i].style.display = "none";
+                vetorBotoes[i].className = "botao_aba";
+            }
+        }
+
+        function mostrarPlanejar() {
+            esconderEtapas();
+            conteudo_planejar.style.display = "block";
+            etapa_planejar.className = "botao_aba_ativo";
+        }
+
+        function mostrarChegar() {
+            esconderEtapas();
+            conteudo_chegar.style.display = "block";
+            etapa_chegar.className = "botao_aba_ativo";
+        }
+
+        function mostrarSeAdaptar() {
+            esconderEtapas();
+            conteudo_se_adaptar.style.display = "block";
+            etapa_se_adaptar.className = "botao_aba_ativo";
+        }
+
+        function esconderCidades() {
+            let vetorCards = [card_valletta, card_sliema, card_stjulians, card_mdina];
+            let vetorBotoes = [cidade_valletta, cidade_sliema, cidade_stjulians, cidade_mdina];
+
+            for (let i = 0; i < vetorCards.length; i++) {
+                vetorCards[i].style.display = "none";
+                vetorBotoes[i].className = "botao_aba";
+            }
+        }
+
+        function mostrarValletta() {
+            esconderCidades();
+            card_valletta.style.display = "flex";
+            cidade_valletta.className = "botao_aba_ativo";
+        }
+
+        function mostrarSliema() {
+            esconderCidades();
+            card_sliema.style.display = "flex";
+            cidade_sliema.className = "botao_aba_ativo";
+        }
+
+        function mostrarStJulians() {
+            esconderCidades();
+            card_stjulians.style.display = "flex";
+            cidade_stjulians.className = "botao_aba_ativo";
+        }
+
+        function mostrarMdina() {
+            esconderCidades();
+            card_mdina.style.display = "flex";
+            cidade_mdina.className = "botao_aba_ativo";
+        }
+
+
+        function calcularViagem() {
+            let dias = Number(input_dias.value);
+            let meses_viagem = Number(input_meses_viagem.value);
+            let moeda = select_moeda.value;
+            let cotacao = Number(input_cotacao.value);
+
+            if (dias <= 0 || meses_viagem <= 0 || cotacao <= 0) {
+                alert("Preencha os campos com valores maiores que zero.");
+            } else {
+                let moradia_eur = dias * 40;
+                let alimentacao_eur = dias * 20;
+                let transporte_eur = dias * 5;
+                let passagem_eur = 600;
+
+                let subtotal_eur = moradia_eur + alimentacao_eur + transporte_eur + passagem_eur;
+                let reserva_eur = subtotal_eur * 0.10;
+                let total_eur = subtotal_eur + reserva_eur;
+
+                let media_dia_eur = total_eur / dias;
+                let guardar_mes_eur = total_eur / meses_viagem;
+
+                resultado.style.display = "block";
+
+                if (moeda == "BRL") {
+                    span_moradia.innerHTML = "R$ " + (moradia_eur * cotacao).toFixed(0);
+                    span_alimentacao.innerHTML = "R$ " + (alimentacao_eur * cotacao).toFixed(0);
+                    span_transporte.innerHTML = "R$ " + (transporte_eur * cotacao).toFixed(0);
+                    span_passagem.innerHTML = "R$ " + (passagem_eur * cotacao).toFixed(0);
+                    span_reserva.innerHTML = "R$ " + (reserva_eur * cotacao).toFixed(0);
+                    span_total_estimado.innerHTML = "R$ " + (total_eur * cotacao).toFixed(0);
+                    p_equivalencia.innerHTML = "Equivale a € " + total_eur.toFixed(0) + " na cotação informada.";
+                    span_media_dia.innerHTML = "R$ " + (media_dia_eur * cotacao).toFixed(2);
+                    span_guardar_mes.innerHTML = "R$ " + (guardar_mes_eur * cotacao).toFixed(2);
+                } else {
+                    span_moradia.innerHTML = "€ " + moradia_eur.toFixed(0);
+                    span_alimentacao.innerHTML = "€ " + alimentacao_eur.toFixed(0);
+                    span_transporte.innerHTML = "€ " + transporte_eur.toFixed(0);
+                    span_passagem.innerHTML = "€ " + passagem_eur.toFixed(0);
+                    span_reserva.innerHTML = "€ " + reserva_eur.toFixed(0);
+                    span_total_estimado.innerHTML = "€ " + total_eur.toFixed(0);
+                    p_equivalencia.innerHTML = "Equivale a R$ " + (total_eur * cotacao).toFixed(0) + " na cotação informada.";
+                    span_media_dia.innerHTML = "€ " + media_dia_eur.toFixed(2);
+                    span_guardar_mes.innerHTML = "€ " + guardar_mes_eur.toFixed(2);
+                }
+            }
+        }
+
+
+        function enviarPlanos() {
+            let vetorRadios = [radio_estudar, radio_trabalhar, radio_ambos, radio_conhecer];
+            let motivo_escolhido = "";
+
+            for (let i = 0; i < vetorRadios.length; i++) {
+                if (vetorRadios[i].checked) {
+                    motivo_escolhido = vetorRadios[i].value;
+                }
+            }
+
+            let cidade = select_cidade_morar.value;
+            let quando = select_quando_viajar.value;
+            let preocupacao = select_preocupacao.value;
+
+            if (motivo_escolhido == " ") {
+                div_exibir.innerHTML = "<span style='color: red'>Escolha o seu principal motivo para continuar.</span>";
+            } else {
+                div_exibir.innerHTML = "<span style='color: green'>Respostas enviadas! Obrigado por compartilhar seus planos.</span>";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

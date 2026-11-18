@@ -1,0 +1,410 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Poppins, Arial, sans-serif;
+    color: #1B2A3A;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 0 0 12px 0;
+}
+
+h2 {
+    font-size: 34px;
+    color: #00A055;
+    text-align: center;
+    margin: 0 0 12px 0;
+}
+
+h3 {
+    font-size: 26px;
+    color: #00A055;
+    margin: 0 0 8px 0;
+}
+
+p {
+    line-height: 1.6;
+    color: #33475B;
+}
+
+a {
+    text-decoration: none;
+    color: #007A3D;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+img {
+    max-width: 100%;
+}
+
+label {
+    display: block;
+    margin: 14px 0 6px 0;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 11px;
+    border: 2px solid #7A8B9C;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+select {
+    width: 100%;
+    padding: 11px;
+    border: 2px solid #7A8B9C;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+
+.radio {
+    width: auto;
+}
+
+button {
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 22px;
+    border: 2px solid #00CB69;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #007A3D;
+    cursor: pointer;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 32px;
+}
+
+.logo {
+    color: #FFE05A;
+    margin: 0;
+}
+
+.logo_verde {
+    color: #00CB69;
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
+}
+
+.botoes_topo {
+    display: flex;
+    gap: 12px;
+}
+
+.link_botao {
+    display: inline-block;
+    padding: 10px 22px;
+    margin: 0 6px 6px 0;
+    border: 2px solid #00CB69;
+    border-radius: 10px;
+    background: #FFFFFF;
+}
+
+.link_botao_verde {
+    display: inline-block;
+    padding: 10px 22px;
+    margin: 0 6px 6px 0;
+    border: 2px solid #00CB69;
+    border-radius: 10px;
+    background: #00CB69;
+    color: #ffffff;
+}
+
+.topo {
+    min-height: 460px;
+    padding: 0 64px;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(8, 18, 40, 0.6), rgba(8, 18, 40, 0.6)), url("../img/valletta.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.topo_texto {
+    max-width: 620px;
+    color: #FFFFFF;
+}
+
+.topo_texto p {
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.secao {
+    padding: 64px;
+    text-align: center;
+}
+
+.texto_esquerda {
+    text-align: left;
+}
+
+.linha_sol {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+}
+
+.texto_sol {
+    max-width: 420px;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.fundo_verde {
+    background: #00CB69;
+}
+
+.fundo_claro {
+    background: #E8F8EF;
+}
+
+
+
+.fundo_laranja {
+    background: #F75D37;
+}
+
+.titulo_branco {
+    color: #FFFFFF;
+}
+
+.amarelo {
+    color: #FFE05A;
+}
+
+.mapa {
+    width: 640px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.legenda {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    font-weight: 600;
+}
+
+.barra_gozo {
+    width: 140px;
+    height: 6px;
+    margin-bottom: 8px;
+    background: #F75D37;
+}
+
+.barra_comino {
+    width: 140px;
+    height: 6px;
+    margin-bottom: 8px;
+    background: #FFE05A;
+}
+
+.barra_malta {
+    width: 140px;
+    height: 6px;
+    margin-bottom: 8px;
+    background: #00CB69;
+}
+
+.botao_aba {
+    margin: 0 4px;
+}
+
+.botao_aba_ativo {
+    margin: 0 4px;
+    background: #00CB69;
+    color: #FFFFFF;
+}
+
+.cartao {
+    max-width: 860px;
+    margin: 24px auto 0 auto;
+    padding: 28px;
+    text-align: left;
+    background: #FFFFFF;
+    border: 2px solid #00CB69;
+    border-radius: 16px;
+}
+
+.cartao_estreito {
+    max-width: 640px;
+    margin: 24px auto 0 auto;
+    padding: 24px;
+    text-align: left;
+    background: #FFFFFF;
+    border: 2px solid #00CB69;
+    border-radius: 16px;
+}
+
+.fundo_bege {
+    background: #F6EBD0;
+}
+
+
+.etiqueta {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #FFE05A;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.grade_itens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.item {
+    width: 48%;
+    padding: 14px 16px;
+    background: #F6EBD0;
+    border-radius: 12px;
+    line-height: 1.5;
+}
+
+.cartao_cidade {
+    display: flex;
+    gap: 28px;
+}
+
+.foto_cidade {
+    width: 320px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.caixa_info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 56px;
+    padding: 16px;
+    background: #FFFFFF;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.icone {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 6px;
+}
+
+.linha_citacoes {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+
+.citacao {
+    flex: 1;
+    max-width: 520px;
+    padding: 28px;
+    text-align: left;
+    font-style: italic;
+    background: #F6EBD0;
+    border-radius: 16px;
+}
+
+.aspas {
+    font-family: Georgia, serif;
+    font-size: 56px;
+    font-style: normal;
+    line-height: 1;
+    text-align: center;
+    color: #F75D37;
+}
+
+.autor {
+    display: block;
+    text-align: right;
+    font-style: normal;
+    color: #0A2F5C;
+}
+
+.botao_laranja {
+    margin-top: 20px;
+    padding: 12px 32px;
+    background: #F75D37;
+    border-color: #F75D37;
+    color: #FFFFFF;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0;
+    border-bottom: 1px solid #E0D2AE;
+}
+
+.linha_guardar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding: 12px 14px;
+    background: #F75D37;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.botao_verde {
+    margin-top: 16px;
+    background: #00CB69;
+    color: #0A2F1B;
+}
+
+.linha_cartoes {
+    display: flex;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 24px auto;
+}
+
+.titulo_escuro {
+    color: #1B2A3A;
+}
+
+.texto_escuro {
+    color: #1B2A3A;
+    font-size: 17px;
+}
+
+.cartao_pequeno {
+    flex: 1;
+    padding: 22px;
+    background: #FFFFFF;
+    border: 2px solid #00CB69;
+    border-radius: 16px;
+    color: #33475B;
+}
+
+.escondido {
+    display: none;
+}

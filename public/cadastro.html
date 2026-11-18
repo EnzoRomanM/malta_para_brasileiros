@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Malta Experience - Cadastro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/cadastro.css">
+</head>
+
+<body>
+
+    <div class="cabecalho">
+        <h3 class="logo">Malta <span class="logo_verde">Experience</span></h3>
+        <div class="menu">
+            <a href="index.html#como">Como funciona</a>
+            <a href="index.html#info">Informações</a>
+            <a href="index.html#calculadora">Calculadora</a>
+            <a href="index.html#cidades">Cidades</a>
+        </div>
+        <div class="botoes_topo">
+            <a class="link_botao" href="login.html">Acessar conta</a>
+            <a class="link_botao_verde" href="cadastro.html">Criar conta</a>
+        </div>
+    </div>
+
+    <div class="fundo_conta">
+        <div class="cartao_conta">
+            <div class="lado_form">
+                <h1 class="titulo_conta">Crie sua conta</h1>
+                <p>Preencha os dados abaixo para começar.</p>
+                <label>Nome Completo</label>
+                <input class="campo_conta" id="input_nome" type="text" placeholder="Digite seu nome">
+
+                <label>CPF</label>
+                <input class="campo_conta" id="input_cpf" type="text" maxlength="11" placeholder="Somente números">
+
+                <label>E-mail</label>
+                <input class="campo_conta" id="input_email" type="text" placeholder="voce@email.com">
+
+                <label>Senha</label>
+                <input class="campo_conta" id="input_senha" type="password" placeholder="Mínimo de 8 caracteres">
+
+                <button class="botao_amarelo" onclick="criarConta()">Criar conta</button>
+                <div class="mensagem_conta" id="div_exibir"></div>
+                <p class="troca_conta">Já tem uma conta? <a href="login.html">Entrar</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function criarConta() {
+            let nome = input_nome.value;
+            let cpf = input_cpf.value;
+            let email = input_email.value;
+            let senha = input_senha.value;
+
+            if (nome == "" || cpf == "" || email == "" || senha == "") {
+                div_exibir.innerHTML = "<span style='color: red'>Preencha todos os campos.</span>";
+            } else if (nome.length < 2) {
+                div_exibir.innerHTML = "<span style='color: red'>Nome e sobrenome precisam ter pelo menos 2 letras.</span>";
+            } else if (cpf.length != 11) {
+                div_exibir.innerHTML = "<span style='color: red'>O CPF deve ter 11 números, sem ponto nem traço.</span>";
+            } else if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                div_exibir.innerHTML = "<span style='color: red'>Digite um e-mail válido.</span>";
+            } else if (senha.length < 8) {
+                div_exibir.innerHTML = "<span style='color: red'>A senha precisa ter no mínimo 8 caracteres.</span>";
+            } else {
+
+                fetch("/usuarios/cadastrar", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        nomeServer: nome,
+                        emailServer: email,
+                        senhaServer: senha,
+                        cpfServer: cpf
+                    }),
+                })
+                    .then(function (resposta) {
+                        console.log("resposta: ", resposta);
+
+                        if (resposta.ok) {
+
+                            div_exibir.innerHTML = "<span style='color: green'>Conta criada com sucesso! Bem-vindo(a), " + nome + ".</span>";
+
+                            setTimeout(() => {
+                                window.location = "/login.html";
+                            }, "2000");
+
+                        } else {
+                            throw "Houve um erro ao tentar realizar o cadastro!";
+                        }
+                    })
+                    .catch(function (resposta) {
+                        console.log(`#ERRO: ${resposta}`);
+                    });
+
+                return false;
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

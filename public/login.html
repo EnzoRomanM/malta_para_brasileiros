@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Malta Experience - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+
+    <div class="cabecalho">
+        <h3 class="logo">Malta <span class="logo_verde">Experience</span></h3>
+        <div class="menu">
+            <a href="index.html#como">Como funciona</a>
+            <a href="index.html#info">Informações</a>
+            <a href="index.html#calculadora">Calculadora</a>
+            <a href="index.html#cidades">Cidades</a>
+        </div>
+        <div class="botoes_topo">
+            <a class="link_botao" href="login.html">Acessar conta</a>
+            <a class="link_botao_verde" href="cadastro.html">Criar conta</a>
+        </div>
+    </div>
+
+    <div class="fundo_conta">
+        <div class="cartao_conta">
+            <div class="lado_form">
+                <h1 class="titulo_conta">Acesse sua conta</h1>
+                <p>Digite seu e-mail e sua senha.</p>
+                <label>E-mail</label>
+                <input class="campo_conta" id="input_email" type="text" placeholder="voce@email.com">
+
+                <label>Senha</label>
+                <input class="campo_conta" id="input_senha" type="password" placeholder="Digite sua senha">
+
+                <button class="botao_amarelo" onclick="entrarConta()">Entrar</button>
+                <div class="mensagem_conta" id="div_exibir"></div>
+                <p class="troca_conta">Ainda não tem conta? <a href="cadastro.html">Criar conta</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function entrarConta() {
+            let email = input_email.value;
+            let senha = input_senha.value;
+
+            if (email == "" || senha == "") {
+                div_exibir.innerHTML = "<span style='color: red'>Preencha o e-mail e a senha.</span>";
+            } else if (email.indexOf("@") == -1) {
+                div_exibir.innerHTML = "<span style='color: red'>Digite um e-mail válido.</span>";
+            } else if (senha.length < 8) {
+                div_exibir.innerHTML = "<span style='color: red'>A senha precisa ter no mínimo 8 caracteres.</span>";
+            } else {
+
+                fetch("/usuarios/autenticar", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        emailServer: email,
+                        senhaServer: senha
+                    })
+                }).then(function (resposta) {
+                    console.log("ESTOU NO THEN DO entrar()!")
+
+                    if (resposta.ok) {
+                        console.log(resposta);
+                        div_exibir.innerHTML = "<span style='color: green'>Entrando</span>";
+
+
+                        resposta.json().then(json => {
+                            console.log(json);
+                            console.log(JSON.stringify(json));
+                            sessionStorage.EMAIL_USUARIO = json.email;
+                            sessionStorage.NOME_USUARIO = json.nome;
+                            sessionStorage.ID_USUARIO = json.id;
+
+                            setTimeout(function () {
+                                window.location = "/";
+                            }, 1000); // apenas para exibir o loading
+
+                        });
+
+                    } else {
+
+                        console.log("Houve um erro ao tentar realizar o login!");
+
+                        resposta.text().then(texto => {
+                            console.error(texto);
+                            finalizarAguardar(texto);
+                        });
+                    }
+
+                }).catch(function (erro) {
+                    console.log(erro);
+                })
+
+                return false;
+
+
+            }
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

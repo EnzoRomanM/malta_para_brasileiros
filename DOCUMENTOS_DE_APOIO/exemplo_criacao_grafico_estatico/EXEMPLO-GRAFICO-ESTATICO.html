@@ -93,7 +93,7 @@ function plotarGraficoLinha(dados){
           labels: jogadores, // Rótulos no eixo X
           datasets: [{ 
               label: 'Votos', // Nome do conjunto de dados
-              data: votos, // Dados dos votos
+              data: votos, jogadores, // Dados dos votos
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)', // Cor de fundo das linhas
               ],

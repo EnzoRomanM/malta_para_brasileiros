@@ -104,13 +104,14 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome_completo;
+                    // a API devolve uma lista com 1 usuário, por isso json[0]
+                    sessionStorage.EMAIL_USUARIO = json[0].email;
+                    sessionStorage.NOME_USUARIO = json[0].nome_completo;
                    // sessionStorage.ID_USUARIO = json.id;
                    // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
-                        window.location = "./index.html";
+                        window.location = "./dashboard_malta.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

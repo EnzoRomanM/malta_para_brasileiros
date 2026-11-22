@@ -55,7 +55,7 @@
 
     <div class="secao" id="como">
         <h2>Do Brasil à rotina em Malta</h2>
-        <p>Escolha uma fase para ver o que fazer em cada momento.</p>
+        <p>Selecione uma etapa para acompanhar o passo a passo da sua mudança.</p>
 
         <button id="etapa_planejar" class="botao_aba_ativo" onclick="mostrarPlanejar()">1 · Planejar</button>
         <button id="etapa_chegar" class="botao_aba" onclick="mostrarChegar()">2 · Chegar</button>
@@ -66,9 +66,8 @@
             <span class="etiqueta">Antes de viajar</span>
             <p>Quanto antes você organiza a base, menos imprevisto na chegada.</p>
             <div class="grade_itens">
-                <div class="item">Definir o motivo da mudança (estudo, trabalho ou ambos) e conferir em fontes oficiais
-                    se você precisa de permissão antes de viajar.</div>
-                <div class="item">Escolher a escola de inglês e a data de início.</div>
+                <div class="item">Definir o motivo da mudança (estudo, trabalho ou ambos) e conferir em fontes oficiais se você precisa de permissão antes de viajar.</div>
+                <div class="item">Definir a data de partida e o plano inicial (curso, candidatura/emprego ou período de adaptação)</div>
                 <div class="item">Montar o orçamento: moradia, transporte, alimentação e reserva de emergência.</div>
                 <div class="item">Reservar hospedagem temporária para as primeiras semanas.</div>
             </div>
@@ -81,7 +80,7 @@
             <div class="grade_itens">
                 <div class="item">Ir para a hospedagem temporária e descansar da viagem.</div>
                 <div class="item">Comprar um chip local ou um plano de internet.</div>
-                <div class="item">Conhecer o caminho entre a hospedagem e a escola.</div>
+                <div class="item">Explorar o bairro e conhecer os pontos de ônibus e mercados próximos.</div>
                 <div class="item">Começar a procurar moradia fixa com calma, sem pressa.</div>
             </div>
         </div>
@@ -241,11 +240,11 @@
 
         <div class="cartao_estreito">
             <label>1. Qual o seu principal motivo para ir para Malta?</label>
-            <input class="radio" type="radio" name="motivo" id="radio_estudar" value="Estudar"> Estudar <br>
-            <input class="radio" type="radio" name="motivo" id="radio_trabalhar" value="Trabalhar"> Trabalhar <br>
-            <input class="radio" type="radio" name="motivo" id="radio_ambos" value="Estudar e trabalhar"> Estudar e
+            <input class="radio" type="radio" name="motivo" id="radio_estudar" value="1"> Estudar <br>
+            <input class="radio" type="radio" name="motivo" id="radio_trabalhar" value="2"> Trabalhar <br>
+            <input class="radio" type="radio" name="motivo" id="radio_ambos" value="3"> Estudar e
             trabalhar <br>
-            <input class="radio" type="radio" name="motivo" id="radio_conhecer" value="Conhecer e avaliar"> Conhecer e
+            <input class="radio" type="radio" name="motivo" id="radio_conhecer" value="4"> Conhecer e
             avaliar
 
             <label>2. Em qual cidade você pretende morar?</label>
@@ -259,19 +258,19 @@
 
             <label>3. Quando pretende viajar?</label>
             <select id="select_quando_viajar">
-                <option>Em até 3 meses</option>
-                <option>Entre 3 e 6 meses</option>
-                <option>Entre 6 e 12 meses</option>
-                <option>Em mais de 1 ano</option>
+                <option value="1">Em até 3 meses</option>
+                <option value="2">Entre 3 e 6 meses</option>
+                <option value="3">Entre 6 e 12 meses</option>
+                <option value="4">Em mais de 1 ano</option>
             </select>
 
             <label>4. O que mais te preocupa na mudança?</label>
             <select id="select_preocupacao">
-                <option>Visto e documentos</option>
-                <option>Moradia</option>
-                <option>Custo de vida</option>
-                <option>Trabalho</option>
-                <option>Idioma</option>
+                <option value="1">Visto e documentos</option>
+                <option value="2">Moradia</option>
+                <option value="3">Custo de vida</option>
+                <option value="4">Trabalho</option>
+                <option value="5">Idioma</option>
             </select>
 
             <button class="botao_verde" onclick="enviarPlanos()">Enviar respostas</button>
@@ -420,10 +419,31 @@
             let quando = select_quando_viajar.value;
             let preocupacao = select_preocupacao.value;
 
-            if (motivo_escolhido == " ") {
+            if (motivo_escolhido == "") {
                 div_exibir.innerHTML = "<span style='color: red'>Escolha o seu principal motivo para continuar.</span>";
             } else {
-                div_exibir.innerHTML = "<span style='color: green'>Respostas enviadas! Obrigado por compartilhar seus planos.</span>";
+                // os valores enviados são os ids das opções (iguais aos ids das tabelas do banco)
+                fetch("/respostas/cadastrar", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        motivoServer: motivo_escolhido,
+                        cidadeServer: cidade,
+                        prazoServer: quando,
+                        preocupacaoServer: preocupacao
+                    })
+                }).then(function (resposta) {
+                    if (resposta.ok) {
+                        div_exibir.innerHTML = "<span style='color: green'>Respostas enviadas! Obrigado por compartilhar seus planos.</span>";
+                    } else {
+                        div_exibir.innerHTML = "<span style='color: red'>Não foi possível enviar suas respostas. Tente novamente.</span>";
+                    }
+                }).catch(function (erro) {
+                    console.log(erro);
+                    div_exibir.innerHTML = "<span style='color: red'>Não foi possível enviar suas respostas. Tente novamente.</span>";
+                });
             }
         }
     </script>

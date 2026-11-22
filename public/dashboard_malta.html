@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malta Experience - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/dashboard_malta.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+    <script src="../js/sessao.js"></script>
+    <script src="../js/dashboard_malta.js"></script>
+</head>
+
+<body onload="obterDados()">
+
+    <div class="cabecalho_verde">
+        <div></div>
+        <h3 class="logo">Malta <span class="logo_verde">Experience</span></h3>
+        <div class="usuario">
+            <div>Olá, <b id="b_usuario"></b></div>
+            <button class="botao_sair" onclick="limparSessao()">Sair</button>
+        </div>
+    </div>
+
+    <div class="conteudo">
+
+        <div class="linha_cartoes">
+            <div class="cartao_kpi">Total de respostas<div class="numero_kpi" id="div_total"></div></div>
+            <div class="cartao_kpi">Cidade mais escolhida<div class="numero_kpi" id="div_cidade_top"></div><div class="detalhe_kpi" id="div_cidade_detalhe"></div></div>
+            <div class="cartao_kpi">Motivo mais comum<div class="numero_kpi" id="div_motivo_top"></div><div class="detalhe_kpi" id="div_motivo_detalhe"></div></div>
+            <div class="cartao_kpi">Maior preocupação<div class="numero_kpi" id="div_preocupacao_top"></div><div class="detalhe_kpi" id="div_preocupacao_detalhe"></div></div>
+        </div>
+
+        <div class="linha_graficos">
+            <div class="cartao_grafico">
+                <h3 class="titulo_grafico">Motivo da mudança</h3>
+                <div class="linha_pizza">
+                    <div class="caixa_pizza"><canvas id="canvas_motivo" role="img" aria-label="Gráfico de pizza com o motivo da mudança"></canvas></div>
+                    <div class="legenda_pizza" id="div_legenda_motivo"></div>
+                </div>
+            </div>
+            <div class="cartao_grafico">
+                <h3 class="titulo_grafico">Ranking das cidades</h3>
+                <div class="caixa_grafico"><canvas id="canvas_cidades" role="img" aria-label="Gráfico de barras com o ranking das cidades"></canvas></div>
+            </div>
+        </div>
+
+        <div class="linha_graficos">
+            <div class="cartao_grafico">
+                <h3 class="titulo_grafico">Quando pretendem viajar</h3>
+                <div class="caixa_grafico"><canvas id="canvas_quando" role="img" aria-label="Gráfico de colunas com quando pretendem viajar"></canvas></div>
+            </div>
+            <div class="cartao_grafico">
+                <h3 class="titulo_grafico">O que mais preocupa</h3>
+                <div class="caixa_grafico"><canvas id="canvas_preocupacao" role="img" aria-label="Gráfico de barras com o que mais preocupa"></canvas></div>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

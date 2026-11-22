@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: Poppins, Arial, sans-serif;
+    color: #1B2A3A;
+    background: #FFFFFF;
+}
+
+h3 {
+    margin: 0;
+}
+
+b {
+    font-weight: 600;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Cabeçalho verde escuro (mesmo estilo do login e do cadastro) */
+
+.cabecalho_verde {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 32px;
+    background: #007A3D;
+}
+
+.logo {
+    margin: 0;
+    text-align: center;
+    font-size: 22px;
+    color: #FFE05A;
+}
+
+.logo_verde {
+    color: #00CB69;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.botao_sair {
+    padding: 4px 18px;
+    background: #FFFFFF;
+    border: 2px solid #00CB69;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #007A3D;
+}
+
+/* Conteúdo */
+
+.conteudo {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 8px 20px;
+}
+
+.linha_cartoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cartao_kpi {
+    flex: 1 1 170px;
+    min-width: 0;
+    padding: 5px 12px;
+    background: #F6EBD0;
+    border: 2px solid #00CB69;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #33475B;
+}
+
+.numero_kpi {
+    margin-top: 0;
+    font-size: 18px;
+    overflow-wrap: break-word;
+    font-weight: 700;
+    line-height: 20px;
+    color: #0A2F5C;
+}
+
+.detalhe_kpi {
+    margin-top: 0;
+    font-size: 10px;
+    font-weight: 500;
+    color: #33475B;
+}
+
+.linha_graficos {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    gap: 8px;
+}
+
+.cartao_grafico {
+    flex: 1 1 440px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 6px 12px;
+    border: 2px solid #00CB69;
+    border-radius: 10px;
+}
+
+.titulo_grafico {
+    margin-bottom: 2px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0A2F5C;
+}
+
+/* Gráficos (o Chart.js precisa de uma caixa com altura definida) */
+
+.caixa_grafico {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Pizza e legenda */
+
+.linha_pizza {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.caixa_pizza {
+    position: relative;
+    width: 130px;
+    height: 100%;
+    max-height: 140px;
+}
+
+.legenda_pizza {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 180px;
+    font-size: 12px;
+}
+
+.item_legenda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bolinha {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.nome_legenda {
+    flex-grow: 1;
+}
+
+.cor_0 {
+    background: #FFE05A;
+    border: 1px solid #C9A800;
+}
+
+.cor_1 {
+    background: #00CB69;
+}
+
+.cor_2 {
+    background: #007A3D;
+}
+
+.cor_3 {
+    background: #0A2F5C;
+}
+
+/* Aviso embaixo da página */
+

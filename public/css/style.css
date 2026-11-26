@@ -408,3 +408,63 @@ button {
 .escondido {
     display: none;
 }
+
+
+.secao_dicas{
+    padding:60px 5%
+}
+
+.dicas_titulo{
+    text-align:center;
+    font-size:36px;
+    font-weight:bold;
+    color:#007A3D;
+    margin-bottom:10px
+}
+
+.dicas_subtitulo{
+    text-align:center;
+    font-size:18px;
+    margin-bottom:40px
+}
+
+.linha_dicas{
+    display:flex;gap:2%
+}
+
+.cartao_dica{
+    width:23.5%;
+    background:#FFF;
+    border-radius:16px;
+    border-top:10px solid #00CB69;
+    padding:24px 20px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.12)
+}
+
+.cor_amarelo{
+    border-top-color:#FFE05A
+}
+
+.cor_laranja{
+    border-top-color:#F75D37
+}
+
+.cor_azul{
+    border-top-color:#0A2F5C
+}
+
+.nome_dica{
+    font-size:22px;font-weight:bold;color:#007A3D;margin-bottom:10px
+}
+
+.texto_dica{
+    font-size:16px;
+    line-height:24px;
+    margin-bottom:12px
+}
+
+.rodape_dicas{
+    text-align:center;
+    font-size:15px;
+    margin-top:30px
+}

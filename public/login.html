@@ -15,10 +15,12 @@
     <div class="cabecalho">
         <h3 class="logo">Malta <span class="logo_verde">Experience</span></h3>
         <div class="menu">
-            <a href="index.html#como">Como funciona</a>
+            <a href="index.html#inicio">Início</a>
+            <a href="index.html#como">Passo a passo</a>
             <a href="index.html#info">Informações</a>
             <a href="index.html#calculadora">Calculadora</a>
             <a href="index.html#cidades">Cidades</a>
+            <a href="index.html#dicas">Dicas</a>
         </div>
         <div class="botoes_topo">
             <a class="link_botao" href="login.html">Acessar conta</a>
@@ -44,7 +46,7 @@
         </div>
     </div>
 
-   
+
 
 </body>
 
@@ -54,20 +56,20 @@
 
 
     function entrarConta() {
-      //  aguardar();
+        //  aguardar();
         let emailVar = input_email.value;
         let senhaVar = input_senha.value;
-            console.log('ESSE É O EMAIL')
-            console.log(emailVar)
+        console.log('ESSE É O EMAIL')
+        console.log(emailVar)
 
 
-            if (emailVar == "" || senhaVar == "") {
-                div_exibir.innerHTML = "<span style='color: red'>Preencha o e-mail e a senha.</span>";
-            } else if (emailVar.indexOf("@") == -1) {
-                div_exibir.innerHTML = "<span style='color: red'>Digite um e-mail válido.</span>";
-            } else if (senhaVar.length < 8) {
-                div_exibir.innerHTML = "<span style='color: red'>A senha precisa ter no mínimo 8 caracteres.</span>";
-            }
+        if (emailVar == "" || senhaVar == "") {
+            div_exibir.innerHTML = "<span style='color: red'>Preencha o e-mail e a senha.</span>";
+        } else if (emailVar.indexOf("@") == -1) {
+            div_exibir.innerHTML = "<span style='color: red'>Digite um e-mail válido.</span>";
+        } else if (senhaVar.length < 8) {
+            div_exibir.innerHTML = "<span style='color: red'>A senha precisa ter no mínimo 8 caracteres.</span>";
+        }
 
         // var emailVar = input_email.value;
         // var senhaVar = input_senha.value;
@@ -107,8 +109,8 @@
                     // a API devolve uma lista com 1 usuário, por isso json[0]
                     sessionStorage.EMAIL_USUARIO = json[0].email;
                     sessionStorage.NOME_USUARIO = json[0].nome_completo;
-                   // sessionStorage.ID_USUARIO = json.id;
-                   // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                    // sessionStorage.ID_USUARIO = json.id;
+                    // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
                         window.location = "./dashboard_malta.html";

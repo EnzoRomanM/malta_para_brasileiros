@@ -13,10 +13,12 @@
     <div class="cabecalho">
         <h3 class="logo">Malta <span class="logo_verde">Experience</span></h3>
         <div class="menu">
+            <a href="#inicio">Início</a>
             <a href="#como">Passo a passo</a>
             <a href="#info">Informações</a>
             <a href="#calculadora">Calculadora</a>
             <a href="#cidades">Cidades</a>
+            <a href="#dicas">Dicas</a>
         </div>
         <div class="botoes_topo">
             <a class="link_botao" href="login.html">Acessar conta</a>
@@ -25,7 +27,7 @@
     </div>
 
 
-    <div class="topo">
+    <div class="topo" id="inicio">
         <div class="topo_texto">
             <h1>Seu guia para morar em Malta</h1>
             <p>Está pensando em morar em Malta? Descubra tudo o que você precisa saber antes de embarcar.</p>
@@ -66,8 +68,10 @@
             <span class="etiqueta">Antes de viajar</span>
             <p>Quanto antes você organiza a base, menos imprevisto na chegada.</p>
             <div class="grade_itens">
-                <div class="item">Definir o motivo da mudança (estudo, trabalho ou ambos) e conferir em fontes oficiais se você precisa de permissão antes de viajar.</div>
-                <div class="item">Definir a data de partida e o plano inicial (curso, candidatura/emprego ou período de adaptação)</div>
+                <div class="item">Definir o motivo da mudança (estudo, trabalho ou ambos) e conferir em fontes oficiais
+                    se você precisa de permissão antes de viajar.</div>
+                <div class="item">Definir a data de partida e o plano inicial (curso, candidatura/emprego ou período de
+                    adaptação)</div>
                 <div class="item">Montar o orçamento: moradia, transporte, alimentação e reserva de emergência.</div>
                 <div class="item">Reservar hospedagem temporária para as primeiras semanas.</div>
             </div>
@@ -148,7 +152,8 @@
             <input id="input_cotacao" type="number" value="6.00">
 
             <button class="botao_laranja" onclick="calcularViagem()">Calcular</button>
-            <p>Usa valores de referência por dia para moradia, alimentação e transporte. São estimativas, não preços fixos.</p>
+            <p>Usa valores de referência por dia para moradia, alimentação e transporte. São estimativas, não preços
+                fixos.</p>
         </div>
 
         <div id="resultado" class="cartao_estreito fundo_bege escondido">
@@ -230,6 +235,40 @@
                 </ul>
             </div>
         </div>
+    </div>
+
+
+    <div class="secao_dicas" id="dicas">
+        <div class="dicas_titulo">Dicas de quem já viveu lá</div>
+        <div class="dicas_subtitulo">O que eu gostaria de ter sabido antes de chegar em Malta</div>
+
+        <div class="linha_dicas">
+            <div class="cartao_dica">
+                <div class="nome_dica">Moradia</div>
+                <div class="texto_dica">Sem visto de estudante, brasileiros precisam do Work Permit para residir e
+                    trabalhar legalmente em Malta.</div>
+            </div>
+
+            <div class="cartao_dica cor_amarelo">
+                <div class="nome_dica">Transporte</div>
+                <div class="texto_dica">Malta opera com ônibus e ferries: gratuitos para residentes (Tallinja) e com
+                    cartões econômicos para visitantes.</div>
+            </div>
+
+            <div class="cartao_dica cor_laranja">
+                <div class="nome_dica">Mercado</div>
+                <div class="texto_dica">Os principais supermercados de Malta são Lidl, Welbee's, Valyou, Greens e
+                    Scotts, com ampla variedade.</div>
+            </div>
+
+            <div class="cartao_dica cor_azul">
+                <div class="nome_dica">Emprego</div>
+                <div class="texto_dica">Estrangeiros encontram boas vagas em turismo, varejo e tecnologia, precisando do
+                    Work Permit após contratados.</div>
+            </div>
+        </div>
+
+        <div class="rodape_dicas">Dicas baseadas na minha experiência de 1 ano em Malta.</div>
     </div>
 
 
@@ -421,7 +460,7 @@
             if (motivo_escolhido == "") {
                 div_exibir.innerHTML = "<span style='color: red'>Escolha o seu principal motivo para continuar.</span>";
             } else {
-                // os valores enviados são os ids das opções (iguais aos ids das tabelas do banco)
+
                 fetch("/respostas/cadastrar", {
                     method: "POST",
                     headers: {

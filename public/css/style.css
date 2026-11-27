@@ -443,8 +443,8 @@ button {
     border-top-color:#F75D37
 }
 
-.cor_azul{
-    border-top-color:#0A2F5C
+.cor_vermelha{
+    border-top-color:#a61c1c
 }
 
 .nome_dica{
@@ -461,4 +461,16 @@ button {
     text-align:center;
     font-size:15px;
     margin-top:30px
+}
+
+.rodape{
+    background:#000000;
+    padding:16px 5%;
+    text-align:center;
+}
+
+.texto_rodape{
+    margin:4px 0;
+    font-size:13px;
+    color:#FFFFFF;
 }

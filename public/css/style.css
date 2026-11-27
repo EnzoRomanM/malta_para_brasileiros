@@ -182,8 +182,8 @@ button {
 
 
 
-.fundo_laranja {
-    background: #F75D37;
+.fundo_vermelho {
+    background: #a61c1c;
 }
 
 .titulo_branco {
@@ -380,19 +380,13 @@ button {
     color: #0A2F1B;
 }
 
-.linha_cartoes {
-    display: flex;
-    gap: 24px;
-    max-width: 900px;
-    margin: 0 auto 24px auto;
-}
 
-.titulo_escuro {
-    color: #1B2A3A;
+.titulo_branco {
+    color: #ffff;
 }
 
 .texto_escuro {
-    color: #1B2A3A;
+    color: #ffff;
     font-size: 17px;
 }
 

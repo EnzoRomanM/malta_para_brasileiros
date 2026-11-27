@@ -28,8 +28,6 @@ function cadastrar(req, res) {
     }
 }
 
-// Chamados pelo dashboard (um por rota): cada um devolve uma lista pronta para o Chart.js
-// total -> [{ total: 48 }]   |   demais -> [{ nome: "Estudar", quantidade: 20 }, ...]
 function total(req, res) {
     respostaModel.total()
         .then(function (resultado) {

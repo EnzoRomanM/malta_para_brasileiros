@@ -30,7 +30,6 @@ button {
     cursor: pointer;
 }
 
-/* Cabeçalho verde escuro (mesmo estilo do login e do cadastro) */
 
 .cabecalho_verde {
     display: grid;
@@ -72,7 +71,6 @@ button {
     color: #007A3D;
 }
 
-/* Conteúdo */
 
 .conteudo {
     flex: 1;
@@ -144,7 +142,6 @@ button {
     color: #0A2F5C;
 }
 
-/* Gráficos (o Chart.js precisa de uma caixa com altura definida) */
 
 .caixa_grafico {
     position: relative;
@@ -153,7 +150,6 @@ button {
     min-height: 0;
 }
 
-/* Pizza e legenda */
 
 .linha_pizza {
     flex: 1;
@@ -212,6 +208,4 @@ button {
 .cor_3 {
     background: #0A2F5C;
 }
-
-/* Aviso embaixo da página */
 

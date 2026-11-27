@@ -1,6 +1,5 @@
 var database = require("../database/config");
 
-// Cada função abaixo executa um SELECT/INSERT aprovado para o dashboard.
 // O count com left join faz a opção que ninguém escolheu aparecer com 0.
 
 function total() {
@@ -55,7 +54,6 @@ function listarPreocupacoes() {
     return database.executar(instrucaoSql);
 }
 
-// Number() garante que só número entra no comando (evita texto estranho vindo do navegador)
 function cadastrar(motivo, cidade, prazo, preocupacao) {
     var instrucaoSql = `
         insert into resposta (fkMotivo, fkCidade, fkPrazo, fkPreocupacao)

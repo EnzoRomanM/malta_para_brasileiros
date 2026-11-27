@@ -11,7 +11,6 @@ create table usuario (
 );
 
 
--- Opções de cada pergunta do formulário da Home (o texto fica guardado só aqui)
 create table motivo (
     idMotivo int primary key auto_increment,
     nome varchar(30)

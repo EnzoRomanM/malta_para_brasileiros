@@ -1,9 +1,6 @@
-// ===== DASHBOARD MALTA EXPERIENCE =====
-// Chamada quando a página carrega: busca os dados de cada rota e manda para a função que desenha
 function obterDados() {
     validarSessao();
 
-    // letra menor nos gráficos para tudo caber na tela
     Chart.defaults.font.size = 10;
 
     fetch('/respostas/total')
@@ -80,13 +77,11 @@ function plotarGraficoMotivos(dados) {
     var quantidades = [];
     var soma = 0;
 
-    // Separando os nomes e as quantidades, e somando o total
     for (var i = 0; i < dados.length; i++) {
         quantidades.push(dados[i].quantidade);
         soma = soma + dados[i].quantidade;
     }
 
-    // Nomes dos motivos + legenda ao lado da pizza
     var legenda = "";
     for (var i = 0; i < dados.length; i++) {
         motivos.push(dados[i].nome);
@@ -94,7 +89,6 @@ function plotarGraficoMotivos(dados) {
     }
     div_legenda_motivo.innerHTML = legenda;
 
-    // A lista já vem do maior para o menor, então o primeiro é o mais comum
     if (soma > 0) {
         div_motivo_top.innerHTML = dados[0].nome;
         div_motivo_detalhe.innerHTML = quantidades[0] + " de " + soma + " respostas";
